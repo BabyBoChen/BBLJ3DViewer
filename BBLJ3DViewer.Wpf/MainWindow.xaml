@@ -1,0 +1,27 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BBLJ3DViewer.Wpf"
+        xmlns:Wpf="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf" x:Class="BBLJ3DViewer.Wpf.MainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="585" Width="1040" Icon="/favicon.png">
+    <Window.DataContext>
+        <local:MainWindowViewModel x:Name="mainWindowViewModel"/>
+    </Window.DataContext>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Button x:Name="btnOpen" Content="開啟" HorizontalAlignment="Center" Margin="5,5,5,5" VerticalAlignment="Center" Padding="10,10,10,10" Click="button_Click"/>
+        <ComboBox x:Name="cbModel" Grid.Column="1" ItemsSource="{Binding Models}" VerticalContentAlignment="Center" FontSize="18" Padding="5,5,5,5" Margin="5,5,5,5" SelectedValue="{Binding ModelPath}" />
+        <Wpf:WebView2 x:Name="webview" HorizontalAlignment="Stretch" Grid.Row="1" VerticalAlignment="Stretch" Grid.ColumnSpan="2"/>
+    </Grid>
+
+</Window>
