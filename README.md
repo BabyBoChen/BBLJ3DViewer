@@ -1,4 +1,4 @@
-# BBLJ3D模型檢視器
+# 3D模型檢視器
 使用Edge的WebView2引擎，將Three.js函式庫嵌入WPF桌面視窗中所製作出的3D模型檢視器。支援檢視.gltf和.glb兩種3D物件格式。
 
 ## 使用說明：
